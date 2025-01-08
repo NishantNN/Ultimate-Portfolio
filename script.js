@@ -142,3 +142,5 @@ websiteTile.addEventListener('click',()=>{
 </a>`;
 projectTitle.innerText=`Websites`;
 })
+// get current year
+document.getElementById('current-year').textContent = `| ${new Date().getFullYear()} |`;
