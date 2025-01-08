@@ -334,7 +334,8 @@ a {
 
 .html,
 .css,
-.js {
+.js,
+.py {
     height: 360px;
     width: 33%;
     gap: 10px;
@@ -700,7 +701,8 @@ form button {
 
     .html,
     .css,
-    .js {
+    .js,
+    .py {
         width: 100%;
     }
 
