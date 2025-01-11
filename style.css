@@ -199,7 +199,7 @@ a {
 }
 
 .home {
-    padding-top: 130px;
+    padding-top: 13rem;
     margin: auto;
 }
 
@@ -265,7 +265,7 @@ a {
 }
 
 .about {
-    padding-top: 120px;
+    padding-top: 12rem;
     display: flex;
     flex-direction: column;
     gap: 50px;
@@ -273,7 +273,7 @@ a {
     margin: auto;
 }
 .title-acedemic{
-    padding-top: 120px;
+    padding-top: 12rem;
 }
 
 .section-heading {
@@ -300,7 +300,7 @@ a {
     justify-content: space-between;
     align-items: center;
     margin: auto;
-    padding-top: 120px;
+    padding-top: 12rem;
 }
 
 .programming-title,
@@ -350,7 +350,7 @@ a {
 }
 
 #projects {
-    padding-top: 120px;
+    padding-top: 12rem;
     margin: auto;
     width: 80%;
     display: flex;
@@ -494,6 +494,7 @@ a {
 }
 
 #contact {
+    padding:12rem 0 2rem 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
