@@ -133,12 +133,16 @@ websiteTile.addEventListener('click',()=>{
   bodyPage.style.overflow = 'hidden';
   scrollToTopBtn.classList.add('hide');
   projectContent.innerHTML=`  <a href="https://anukulelectronics.com" target="_blank" class="categories anukul">
-  <img src="/images//anukul.png" alt="Scissors Papers Rock">
+  <img src="/images//anukul.png" alt="anukul">
   <div>Anukul</div>
 </a>
 <a href="https://nishantnn.github.io/N-K-s/" target="_blank" class="categories niks">
-  <img src="/images//niks.png" alt="Scissors Papers Rock">
+  <img src="/images//niks.png" alt="niks">
   <div>Niks</div>
+</a>
+<a href="https://amarkalyan.edu.np" target="_blank" class="categories amarkalyan">
+  <img src="/images//amarkalyan.png" alt="amarkalyan">
+  <div>Amarkalyan SS</div>
 </a>`;
 projectTitle.innerText=`Websites`;
 })
