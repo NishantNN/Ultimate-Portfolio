@@ -1,2 +1,2 @@
-Code to my personal portfoloi hosted at:
+Code to my personal portfolio hosted at:  
 https://nishantapoudel.com.np
