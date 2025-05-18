@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>404 Not Found</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Fira Code', monospace;
+      background: #1e1e1e;
+      color: #d4d4d4;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .ide {
+      background: #1e1e1e;
+      border: 1px solid #333;
+      border-radius: 10px;
+      padding: 20px;
+      width: 90%;
+      max-width: 800px;
+      height: 90vh;
+      box-shadow: 0 0 20px #00000088;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .ide-header {
+      display: flex;
+      gap: 6px;
+      margin-bottom: 10px;
+    }
+
+    .circle {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+    }
+
+    .red { background: #ff5f56; }
+    .yellow { background: #ffbd2e; }
+    .green { background: #27c93f; }
+
+    .code-window {
+      background: #1e1e1e;
+      flex: 1;
+      overflow-y: auto;
+      white-space: pre;
+      font-size: 14px;
+      line-height: 1.4;
+    }
+
+    .comment { color: #6a9955; }
+    .keyword { color: #569cd6; }
+    .string { color: #ce9178; }
+    .function { color: #dcdcaa; }
+
+    .cursor {
+      display: inline-block;
+      width: 10px;
+      background-color: #d4d4d4;
+      animation: blink 1s step-start infinite;
+    }
+
+    @keyframes blink {
+      50% { background-color: transparent; }
+    }
+
+    @media (max-width: 600px) {
+      .code-window {
+        font-size: 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="ide">
+    <div class="ide-header">
+      <div class="circle red"></div>
+      <div class="circle yellow"></div>
+      <div class="circle green"></div>
+    </div>
+    <div class="code-window" id="codeWindow">
+<code><span class="comment">// File: 404.js</span>
+<span class="keyword">const</span> notFound <span class="keyword">=</span> <span class="keyword">()</span> <span class="keyword">=></span> <span class="keyword">{</span>
+  <span class="comment">// Oops... Page not found</span>
+  <span class="keyword">return</span> (
+    <span class="string">"&lt;h1&gt;404 Not Found&lt;/h1&gt;"</span>
+  );
+<span class="keyword">}</span>
+
+notFound();
+</code><span class="cursor"></span>
+    </div>
+  </div>
+
+  <script>
+    const codeWindow = document.getElementById("codeWindow");
+    const codeLines = `
+<span class="comment">// This is not the page you're looking for</span>
+<span class="keyword">function</span> <span class="function">errorPage</span>() {
+  <span class="comment">// Generating structured perfection...</span>
+  <span class="keyword">let</span> lines = [];
+  <span class="keyword">for</span> (<span class="keyword">let</span> i = 0; i &lt; 50; i++) {
+    lines.push(<span class="string">"console.log('Line "</span> + i + <span class="string">"');"</span>);
+  }
+  <span class="keyword">return</span> lines;
+}
+
+<span class="comment">// Rendering error lines</span>
+<span class="keyword">const</span> output = errorPage();
+output.<span class="function">forEach</span>((line, index) =&gt; {
+  <span class="function">setTimeout</span>(() =&gt; {
+    codeWindow.innerHTML += "<br>" + line;
+    codeWindow.scrollTop = codeWindow.scrollHeight;
+  }, index * 50);
+});`;
+
+    setTimeout(() => {
+      const span = document.createElement('span');
+      span.innerHTML = codeLines;
+      document.querySelector(".cursor").before(span);
+    }, 800);
+  </script>
+</body>
+</html>
