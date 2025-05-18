@@ -34,12 +34,14 @@
       box-shadow: 0 0 20px #00000088;
       display: flex;
       flex-direction: column;
+      position: relative;
     }
 
     .ide-header {
       display: flex;
       gap: 6px;
       margin-bottom: 10px;
+      position: relative;
     }
 
     .circle {
@@ -51,6 +53,25 @@
     .red { background: #ff5f56; }
     .yellow { background: #ffbd2e; }
     .green { background: #27c93f; }
+
+    .go-home-btn {
+      position: absolute;
+      right: 0;
+      top: 0;
+      background-color: #252526;
+      border-left: 1px solid #333;
+      border-bottom: 1px solid #333;
+      border-top-right-radius: 10px;
+      padding: 8px 16px;
+      font-size: 14px;
+      color: #d4d4d4;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .go-home-btn:hover {
+      background-color: #333;
+    }
 
     .code-window {
       background: #1e1e1e;
@@ -81,6 +102,11 @@
       .code-window {
         font-size: 12px;
       }
+
+      .go-home-btn {
+        font-size: 12px;
+        padding: 6px 10px;
+      }
     }
   </style>
 </head>
@@ -90,6 +116,7 @@
       <div class="circle red"></div>
       <div class="circle yellow"></div>
       <div class="circle green"></div>
+      <div class="go-home-btn" id="goHomeBtn">Go Back Home</div>
     </div>
     <div class="code-window" id="codeWindow">
 <code><span class="comment">// File: 404.js</span>
@@ -106,8 +133,16 @@ notFound();
   </div>
 
   <script>
-    const codeWindow = document.getElementById("codeWindow");
-    const codeLines = `
+    (function () {
+      const goHomeBtn = document.getElementById("goHomeBtn");
+      const codeWindow = document.getElementById("codeWindow");
+
+      function goHome() {
+        window.location.href = "/";
+      }
+
+      function renderCodeLines() {
+        const codeLines = `
 <span class="comment">// This is not the page you're looking for</span>
 <span class="keyword">function</span> <span class="function">errorPage</span>() {
   <span class="comment">// Generating structured perfection...</span>
@@ -127,11 +162,16 @@ output.<span class="function">forEach</span>((line, index) =&gt; {
   }, index * 50);
 });`;
 
-    setTimeout(() => {
-      const span = document.createElement('span');
-      span.innerHTML = codeLines;
-      document.querySelector(".cursor").before(span);
-    }, 800);
+        setTimeout(() => {
+          const span = document.createElement('span');
+          span.innerHTML = codeLines;
+          document.querySelector(".cursor").before(span);
+        }, 800);
+      }
+
+      goHomeBtn.addEventListener("click", goHome);
+      renderCodeLines();
+    })();
   </script>
 </body>
 </html>
