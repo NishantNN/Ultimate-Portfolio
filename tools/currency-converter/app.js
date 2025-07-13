@@ -216,7 +216,7 @@ const getData = async (URL, fromVal, toVal, amtVal) => {
     let actualData = data.conversion_rates;
     for (curr in actualData) {
         if (curr == toVal) {
-            finalRate = actualData[curr]
+            finalRate = actualData[curr];
             displayRate = finalRate * amtVal;
             outputMsg.innerText = `${amtVal} ${fromVal} = ${displayRate} ${toVal}`;
         }
